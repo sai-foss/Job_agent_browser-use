@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/3ac5658d-95b1-43a5-a67c-a6beea7ccd52
+
 # Autonomous job application agent
 
 A long-running agent that scrapes job listings, scores them against your resume, and then
