@@ -1,0 +1,51 @@
+{
+  "name": "browser-use captcha alert",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "captcha",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "Captcha Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "a1b2c3d4-0001-4000-8000-000000000001"
+    },
+    {
+      "parameters": {
+        "url": "https://us-central1-nodera-efaba.cloudfunctions.net/notifyError",
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"instanceId\": \"__NODERA_INSTANCE_ID__\",\n  \"title\": \"{{ $json.body.event === 'captcha_blocked' ? '🔒 CAPTCHA - ' + $json.body.company : $json.body.company }}\",\n  \"body\": \"{{ $json.body.message }}\",\n  \"workflowId\": \"{{ $workflow.id }}\",\n  \"executionId\": \"{{ $execution.id }}\"\n}",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Nodera Push",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [220, 0]
+    }
+  ],
+  "connections": {
+    "Captcha Webhook": {
+      "main": [
+        [
+          {
+            "node": "Nodera Push",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

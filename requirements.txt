@@ -1,0 +1,8 @@
+browser-use==0.13.1
+httpx==0.28.1
+mcp==1.26.0
+ollama==0.6.1
+pandas==2.3.3
+pydantic==2.12.5
+pypdf==6.10.2
+python-jobspy==1.1.82

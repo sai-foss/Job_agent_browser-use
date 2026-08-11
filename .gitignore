@@ -1,0 +1,20 @@
+# Deny everything, then allow the code back in. A whitelist is the only way to be sure
+# that resumes, scraped listings, logs and .env can never be added by accident - git does
+# not even descend into a directory excluded by `*`, so .venv/ and Study/ stay out too.
+*
+
+!.gitignore
+!.env.example
+!LICENSE
+!README.md
+!README_n8n.md
+!requirements.txt
+
+!*.py
+!run-browser-use.sh
+!n8n_captcha_workflow.json
+
+# agent_dir holds the resume and personal.md - real PII. Only the template is tracked.
+!agent_dir/
+agent_dir/*
+!agent_dir/personal.example.md
