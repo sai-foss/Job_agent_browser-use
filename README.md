@@ -12,6 +12,18 @@ It runs unattended for days. Everything it has done lives in `progress.csv`, one
 > boards and ATS platforms. It also submits real applications to real employers under your
 > name. Read what it produced before you rely on it, and run it on listings you actually want.
 
+## Demo
+
+One job end to end: the supervisor starts, the agent opens a LinkedIn listing, follows it
+through to Netflix's ATS, uploads the resume, and works down the form — contact information,
+self-ID questions, additional documents, application questions — to the confirmation screen.
+Played at 4x; the run itself took 4m45s.
+
+<video src="https://github.com/sai-foss/Job_agent_browser-use/releases/download/v0.1.0/example_video_an.mp4" controls muted width="100%"></video>
+
+If the player above does not load, the recording is in the repo:
+[`example_video_an.mp4`](example_video_an.mp4).
+
 ## How it works
 
 ```

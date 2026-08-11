@@ -14,6 +14,10 @@
 !run-browser-use.sh
 !n8n_captcha_workflow.json
 
+# The demo recording linked from the README. The 4x-speed mp4 is the one that ships; the
+# original webm capture stays untracked.
+!example_video_an.mp4
+
 # agent_dir holds the resume and personal.md - real PII. Only the template is tracked.
 !agent_dir/
 agent_dir/*
